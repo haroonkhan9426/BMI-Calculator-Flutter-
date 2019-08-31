@@ -7,7 +7,7 @@ enum Gender { male, female }
 
 const activeCardColor = Color(0xFF1D1E33);
 const inActiveCardColor = Color(0xFF111328);
-const bottomSheetColor = Color(0xFF111328);
+const bottomSheetColor = Color(0xFFEB1555);
 
 class InputPage extends StatefulWidget {
   @override
@@ -48,15 +48,26 @@ class _InputPageState extends State<InputPage> {
             ],
           ),
         ),
-        ReusableCard(color: activeCardColor,),
+        ReusableCard(
+          color: activeCardColor,
+        ),
         Expanded(
           child: Row(
             children: <Widget>[
-              ReusableCard(color: activeCardColor,),
-              ReusableCard(color: activeCardColor,),
+              ReusableCard(
+                color: activeCardColor,
+              ),
+              ReusableCard(
+                color: activeCardColor,
+              ),
             ],
           ),
         ),
+        Container(
+          width: double.infinity,
+          height: 80.0,
+          color: bottomSheetColor,
+        )
       ],
     );
   }
