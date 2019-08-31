@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bmi_calculator_flutter/custom_widgets/resuable_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bmi_calculator_flutter/custom_widgets/gender_icon_content.dart';
 
 enum Gender { male, female }
 
@@ -32,13 +33,17 @@ class _InputPageState extends State<InputPage> {
             children: <Widget>[
               ReusableCard(
                 color: inActiveCardColor,
-                childWidget: new GenderIconContent(
+                childWidget: GenderIconContent(
                   icon: FontAwesomeIcons.mars,
                   title: 'MALE',
                 ),
               ),
               ReusableCard(
                 color: activeCardColor,
+                childWidget: GenderIconContent(
+                  icon: FontAwesomeIcons.mars,
+                  title: 'FEMALE',
+                ),
               ),
             ],
           ),
@@ -50,37 +55,6 @@ class _InputPageState extends State<InputPage> {
 //              ReusableCard(),
 //              ReusableCard(),
             ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class GenderIconContent extends StatelessWidget {
-  final IconData icon;
-  final String title;
-
-  GenderIconContent({this.icon, this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Icon(
-          FontAwesomeIcons.mars,
-          size: 80.0,
-          color: Colors.white,
-        ),
-        SizedBox(
-          height: 15.0,
-        ),
-        Text(
-          'Male',
-          style: TextStyle(
-            fontSize: 18.0,
-            color: Colors.white,
           ),
         ),
       ],
