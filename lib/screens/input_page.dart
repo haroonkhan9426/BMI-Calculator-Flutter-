@@ -3,11 +3,12 @@ import 'package:bmi_calculator_flutter/custom_widgets/resuable_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calculator_flutter/custom_widgets/gender_icon_content.dart';
 
-enum Gender { male, female }
+enum Gender { male, female, none }
 
 const activeCardColor = Color(0xFF1D1E33);
 const inActiveCardColor = Color(0xFF111328);
 const bottomSheetColor = Color(0xFFEB1555);
+Gender selectedGender;
 
 class InputPage extends StatefulWidget {
   @override
@@ -37,6 +38,9 @@ class _InputPageState extends State<InputPage> {
                   icon: FontAwesomeIcons.mars,
                   title: 'MALE',
                 ),
+                onPressed: () {
+                  print('Card Pressed');
+                },
               ),
               ReusableCard(
                 color: activeCardColor,
@@ -44,6 +48,9 @@ class _InputPageState extends State<InputPage> {
                   icon: FontAwesomeIcons.mars,
                   title: 'FEMALE',
                 ),
+                onPressed: () {
+                  print('Card Pressed');
+                },
               ),
             ],
           ),
