@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-const textStyle = TextStyle(
-  fontSize: 18.0,
-  color: Colors.white,
-);
+import 'package:bmi_calculator_flutter/constants.dart';
 
 class GenderIconContent extends StatelessWidget {
   final IconData icon;
@@ -25,7 +21,7 @@ class GenderIconContent extends StatelessWidget {
         SizedBox(
           height: 15.0,
         ),
-        Text('Male', style: textStyle),
+        Text('Male', style: kLabelTextStyle),
       ],
     );
   }
