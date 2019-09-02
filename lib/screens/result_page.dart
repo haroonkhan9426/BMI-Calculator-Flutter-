@@ -42,16 +42,17 @@ class ResultPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Text(
-                'Normal',
+                bmiCalculator.getStatus(),
                 style: kResultTextStyle,
               ),
               Text(
-                '22.1',
+                bmiCalculator.getBmi().toStringAsFixed(1),
                 style: kBMIValStyle,
               ),
               Text(
-                'This is just message',
+                bmiCalculator.getMessage(),
                 style: kResultMessageStyle,
+                textAlign: TextAlign.center,
               ),
             ],
           ),
