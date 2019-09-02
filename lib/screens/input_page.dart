@@ -4,6 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:bmi_calculator_flutter/custom_widgets/gender_icon_content.dart';
 import 'package:bmi_calculator_flutter/constants.dart';
 import 'package:bmi_calculator_flutter/custom_widgets/round_icon_button.dart';
+import 'package:bmi_calculator_flutter/screens/result_page.dart';
+import 'package:bmi_calculator_flutter/custom_widgets/bottom_button.dart';
 
 enum Gender { male, female, none }
 Gender selectedGender = Gender.none;
@@ -129,19 +131,18 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         RoundIconButton(
-                          icon: Icons.add,
-                          onPressed: (){
-                            setState(() {
-                              weightVal++;
-                            });
-                          }
-                        ),
+                            icon: Icons.add,
+                            onPressed: () {
+                              setState(() {
+                                weightVal++;
+                              });
+                            }),
                         SizedBox(
                           width: 15.0,
                         ),
                         RoundIconButton(
                           icon: Icons.remove,
-                          onPressed: (){
+                          onPressed: () {
                             setState(() {
                               weightVal--;
                             });
@@ -170,18 +171,17 @@ class _InputPageState extends State<InputPage> {
                       children: <Widget>[
                         RoundIconButton(
                             icon: Icons.add,
-                            onPressed: (){
+                            onPressed: () {
                               setState(() {
                                 ageVal++;
                               });
-                            }
-                        ),
+                            }),
                         SizedBox(
                           width: 15.0,
                         ),
                         RoundIconButton(
                           icon: Icons.remove,
-                          onPressed: (){
+                          onPressed: () {
                             setState(() {
                               ageVal--;
                             });
@@ -195,15 +195,13 @@ class _InputPageState extends State<InputPage> {
             ],
           ),
         ),
-        Container(
-          width: double.infinity,
-          height: 80.0,
-          color: kBottomSheetColor,
-          child:
-          Center(child: Text('Calculate BMI',
-            style: kLabelTextStyle,
-          )),
-        )
+        BottomButton(
+          label: 'Calculate BMI',
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ResultPage()));
+          },
+        ),
       ],
     );
   }
