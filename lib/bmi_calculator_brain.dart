@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 class BmiCalculator{
-  final double weight;
-  final double height;
+  final int weight;
+  final int height;
   double _bmi;
   String _status;
   String _message;

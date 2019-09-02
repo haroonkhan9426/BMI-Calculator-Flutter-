@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:bmi_calculator_flutter/constants.dart';
 import 'package:bmi_calculator_flutter/custom_widgets/resusable_card2.dart';
 import 'package:bmi_calculator_flutter/custom_widgets/bottom_button.dart';
+import 'package:bmi_calculator_flutter/bmi_calculator_brain.dart';
 
 class ResultPage extends StatelessWidget {
+
+  final BmiCalculator bmiCalculator;
+
+  ResultPage({this.bmiCalculator});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
